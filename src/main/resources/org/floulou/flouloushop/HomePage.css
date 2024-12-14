@@ -1,0 +1,102 @@
+/* Basic Styling for Flower Shop Layout */
+
+/* Full-screen layout */
+.root {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100%;
+    -fx-min-width: 100%;
+    -fx-min-height: 100%;
+    -fx-background-color: #f4f4f9;
+}
+
+/* Header */
+.header {
+    -fx-background-color: #ffcccc;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+}
+
+.shop-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e60000;
+}
+
+.cart-button {
+    -fx-background-color: #e60000;
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+}
+
+.cart-button:hover {
+    -fx-background-color: #cc0000;
+}
+
+/* Product ScrollPane */
+.product-scroll-pane {
+    -fx-background-color: #f9f9f9;
+    -fx-border-radius: 10px;
+    -fx-padding: 10px;
+    -fx-background-insets: 0;
+}
+
+/* Product Grid */
+.product-grid {
+    -fx-padding: 10px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-radius: 10px;
+    -fx-hgap: 20px;
+    -fx-vgap: 20px;
+    -fx-alignment: center;
+}
+
+/* Product Cell */
+.product-grid .product {
+    -fx-alignment: center;
+    -fx-padding: 10px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e60000;
+    -fx-border-radius: 10px;
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
+}
+
+/* Hover effect for product */
+.product-grid .product:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.product-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e60000;
+    -fx-padding: 10px 0;
+}
+
+.product-image {
+    -fx-fit-width: 150px;
+    -fx-fit-height: 150px;
+    -fx-background-radius: 10px;
+}
+
+.product-price {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px 0;
+}
+
+/* Footer */
+.footer {
+    -fx-background-color: #ffcccc;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+    -fx-alignment: center;
+}
+
+.footer Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e60000;
+}

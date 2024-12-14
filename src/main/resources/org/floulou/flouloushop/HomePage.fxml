@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.image.Image?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.floulou.flouloushop.HomePageController" hgap="20" vgap="20" fx:id="productGrid">
+    <!-- The GridPane will be populated dynamically with product data from the controller -->
+</GridPane>
