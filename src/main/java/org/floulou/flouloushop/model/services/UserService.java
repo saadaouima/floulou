@@ -49,4 +49,46 @@ public class UserService {
 
         return users;
     }
+
+    // Method to register a user and write to CSV
+    public boolean registerUser(String username, String password) {
+        // Check if the username already exists
+        if (isUserExist(username)) {
+            System.out.println("Error: Username already exists.");
+            return false;
+        } else {
+            // If the username doesn't exist, save it to the file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_FILE_PATH, true))) {
+                // Write the username and password to the CSV file
+                writer.write(username + "," + password);
+                writer.newLine();  // Add a new line after each entry
+                System.out.println("User registered successfully!");
+                return true;
+            } catch (IOException e) {
+                System.out.println("An error occurred while saving the user.");
+                e.printStackTrace();
+                return false;
+            }
+        }
+    }
+
+    // Method to check if the username already exists in the CSV file
+    private boolean isUserExist(String username) {
+        File file = new File(USERS_FILE_PATH);
+        if (file.exists()) {
+            try (Scanner fileScanner = new Scanner(file)) {
+                while (fileScanner.hasNextLine()) {
+                    String line = fileScanner.nextLine();
+                    String existingUsername = line.split(",")[0]; // Extract the username part
+                    if (existingUsername.equals(username)) {
+                        return true; // Username already exists
+                    }
+                }
+            } catch (IOException e) {
+                System.out.println("An error occurred while checking the user.");
+                e.printStackTrace();
+            }
+        }
+        return false; // Username does not exist
+    }
 }

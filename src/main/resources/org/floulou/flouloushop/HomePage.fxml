@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ScrollPane?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.floulou.flouloushop.HomePageController" hgap="20" vgap="20" fx:id="productGrid">
-    <!-- The GridPane will be populated dynamically with product data from the controller -->
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.floulou.flouloushop.HomePageController" fx:id="productGrid" hgap="20" vgap="20" style="-fx-padding: 20;">
+    <!-- Define column constraints for better grid structure -->
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" />
+        <ColumnConstraints halignment="CENTER" />
+        <ColumnConstraints halignment="CENTER" />
+    </columnConstraints>
+
+    <!-- Search Bar TextField -->
+    <TextField fx:id="searchField" promptText="Search for a product..." GridPane.columnSpan="3"
+               style="-fx-font-size: 14px; -fx-padding: 10; -fx-background-color: white;"/>
+
+    <!-- Product Grid (wrapped inside ScrollPane for scrolling) -->
+    <ScrollPane fx:id="scrollPane" GridPane.rowIndex="1" GridPane.columnSpan="3" fitToHeight="true" fitToWidth="true">
+        <content>
+            <GridPane fx:id="productGrid">
+                <!-- Products will be dynamically added here -->
+            </GridPane>
+        </content>
+    </ScrollPane>
+
+    <!-- Show Cart Button -->
+    <Button text="Show Cart" fx:id="showCartButton" GridPane.rowIndex="2" GridPane.columnSpan="3"
+            style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold;"
+            onAction="#handleShowCart" />
 </GridPane>

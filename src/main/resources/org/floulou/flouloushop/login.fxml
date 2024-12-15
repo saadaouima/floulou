@@ -2,22 +2,34 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.VBox?>
 
 <GridPane fx:id="gridPane" xmlns:fx="http://javafx.com/fxml" fx:controller="org.floulou.flouloushop.LoginController"
           styleClass="grid-pane">
-    <Label text="Nom d'utilisateur:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="label"/>
-    <TextField fx:id="usernameField" promptText="Nom d'utilisateur" GridPane.rowIndex="0" GridPane.columnIndex="1"
+    <!-- Image spanning entire row (row 0, spanning all columns) -->
+    <ImageView fx:id="logoImage" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2"
+               fitWidth="600" fitHeight="600" preserveRatio="true"/>
+
+    <!-- Username field -->
+    <Label text="Nom d'utilisateur:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="label"/>
+    <TextField fx:id="usernameField" promptText="Nom d'utilisateur" GridPane.rowIndex="1" GridPane.columnIndex="1"
                styleClass="text-field"/>
 
-    <Label text="Mot de passe:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="label"/>
-    <PasswordField fx:id="passwordField" promptText="Mot de passe" GridPane.rowIndex="1" GridPane.columnIndex="1"
+    <!-- Password field -->
+    <Label text="Mot de passe:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="label"/>
+    <PasswordField fx:id="passwordField" promptText="Mot de passe" GridPane.rowIndex="2" GridPane.columnIndex="1"
                    styleClass="password-field"/>
 
-    <Button text="Se connecter" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#handleLogin"
+    <!-- Login Button -->
+    <Button text="Se connecter" GridPane.rowIndex="3" GridPane.columnIndex="1" onAction="#handleLogin"
             styleClass="button"/>
+
+    <!-- Create Account Link -->
+    <Hyperlink text="Créer un compte" GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#handleCreateAccount"
+               styleClass="hyperlink" />
 </GridPane>
